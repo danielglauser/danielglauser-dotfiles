@@ -78,12 +78,16 @@
 (setq ido-enable-flex-matching t)
 
 (require 'zenburn-theme)
+(load-theme 'zenburn t)
+
+(require 'paren)
 (eval-after-load 'zenburn-theme
-  '(progn
-     (color-theme 'zenburn-theme)
-     (setq show-paren-style 'expression)
-     (set-face-attribute 'show-paren-match nil :foreground nil
-                         :background "#1a1a1a" :weight 'normal)))
+  '(setq show-paren-style 'expression))
+
+(custom-theme-set-faces
+ 'user
+ '(show-paren-match
+   ((t (:foreground nil :background "#1a1a1a" :weight normal)))))
 
 ;; Automagically revert all buffers
 (global-auto-revert-mode 1)
