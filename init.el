@@ -93,3 +93,6 @@
 (global-auto-revert-mode 1)
 
 (global-git-gutter-mode t)
+
+(add-hook 'nrepl-mode-hook 'paredit-mode) ; for nrepl.el <= 0.1.8
+(add-hook 'nrepl-repl-mode-hook 'paredit-mode) ; for nrepl.el > 0.1.8
